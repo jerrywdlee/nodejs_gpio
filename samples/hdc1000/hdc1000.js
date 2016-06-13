@@ -1,5 +1,8 @@
 const child = require('child_process');
 
+// sudo raspi-config (GUI)
+// sudo nano /boot/config.txt => dtparam=i2c_arm=on
+// sudo apt-get install python-smbus
 
 var hdc1000 = child.spawn( 'python',['-u',"./read_temp_hum.py"],{stdio:[ 'pipe',null,null, 'pipe' ]});
 hdc1000.stdout.setEncoding('utf8');
